@@ -1,0 +1,18 @@
+<?xml version='1.0' standalone='yes' ?>
+<efemeridesbackup>
+ <efemerides>
+  <historicdate>05/01/2009</historicdate>
+  <title>Evento importante</title>
+  <description><![CDATA[<h1>Texto</h1>]]></description>  
+ </efemerides>
+ <efemerides>
+  <historicdate>05/01/2010</historicdate>
+  <title>Evento importante 2</title>
+  <description><![CDATA[<h1>Texto 5</h1>]]></description>  
+ </efemerides>
+ <efemerides>
+  <historicdate>05/01/2010</historicdate>
+  <title>Evento importante 3</title>
+  <description><![CDATA[<h1>Texto 6</h1>]]></description>  
+ </efemerides>
+</efemeridesbackup>

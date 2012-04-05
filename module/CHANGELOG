@@ -1,0 +1,12 @@
+-- Version 0.8.3
+- Modified the structure with div and p tags to adapt the style easily.
+- Add the parameter "Use CSS" to use a default CSS used by the module.
+
+-- Version 0.8
+- Correct a important bug related with the timezone (Thanks to Joe Queen for the report)
+- Published field add.
+
+-- Version 0.7
+- Formatted date
+- Title field add (needed component 0.7)
+- Option to show title, description or both.

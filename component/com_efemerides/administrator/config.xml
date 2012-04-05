@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<params>
+    <param name="use_css" type="radio" default="1" label="Use default CSS" description="Allow use the default CSS of the module">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+    </param>	
+	<param name="optional_title" default="Efemerides Today" type="text" label="Title" description="The title to show on the component." />
+    <param name="date_range" type="list" label="Date range"
+		       description="Defines the range of dates to show">
+        
+			<option value="by_day">Day</option>
+			<option value="by_month">Month</option>
+			<option value="by_year">Year</option>
+	</param>	
+	<param name="formatted_date" type="radio" default="1" label="Formatted Date" description="Shows the date with format, be careful, a very ancient date don't be formatted">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+ </params>
+ </config>

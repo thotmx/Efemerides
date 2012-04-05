@@ -1,0 +1,19 @@
+--- Version 0.8.3
+- Some bugs fixes. Thanks to the people that report them.
+- Add the option to edit CSS of the module and the component.
+- Modified the HTML structure of the front-end for a customizable view from CSS. 
+
+---- Version 0.8
+- XML import/export feature
+- Pagination and ordering columns for the backend
+- Correct a important bug related with the timezone (Thanks to Joe Queen for the report)
+- Published field add.
+
+---- Version 0.7
+- Title field add.
+- Formatted date feature
+- Portuguese translation. Thanks Luis Méndez Alejo.
+- Italian translation. Thanks Vincenzo Barone.
+
+---- Version 0.5
+- Basic features

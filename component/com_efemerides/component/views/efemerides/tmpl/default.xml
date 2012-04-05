@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata> 
+  <state>
+   <params>
+	<param name="optional_title" type="text" label="Title" description="The title to show on the component." />
+        <param name="date_range" type="list" 
+		       label="Date Range"
+		       description="Defines the range of dates to show">
+			<option value="by_day">Day</option>
+			<option value="by_month">Month</option>
+			<option value="by_year">Year</option>
+        </param>
+    </params>
+  </state>
+</metadata>
