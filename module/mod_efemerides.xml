@@ -1,83 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install type="module" version="1.5.0">
-    <name>Efemerides</name> 
-    <creationDate>26 Sep 2008</creationDate> 
-    <author>Hermes Ojeda Ruiz</author> 
-    <copyright>This module is released under the GNU/GPL License.</copyright> 
-    <authorEmail>hermes.o.r@gmail.com</authorEmail> 
-    <authorUrl>http://revolucionemosoaxaca.org</authorUrl>
-    <version>0.8.5</version> 
+<extension type="module" version="1.6.0" >
+    <name>Efemerides</name>
+    <creationDate>26 Sep 2008</creationDate>
+    <author>Hermes Ojeda Ruiz / Anpassung J 1.6 Andreas Ruttkamp</author>
+    <copyright>This module is released under the GNU/GPL License.</copyright>
+    <authorEmail>hermes.o.r@gmail.com / andreas@ruttkamp.com</authorEmail>
+    <authorUrl>http://revolucionemosoaxaca.org / http://www.ruttkamp.com</authorUrl>
+    <version>1.0</version>
     <description>Easy module to display important historical events</description>
     <files>
         <filename module="mod_efemerides">mod_efemerides.php</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
-        <folder>tmpl</folder>        
+        <folder>tmpl</folder>
         <folder>css</folder>
     </files>
     <languages folder="language">
       <language tag="en-GB">en-GB.mod_efemerides.ini</language>
       <language tag="es-ES">es-ES.mod_efemerides.ini</language>
     </languages>
-    <params>
-      <param name="use_css" type="radio" default="1" label="Use default CSS" description="Allow use the default CSS of the module">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-      <param name="date_range" type="list" default="by_day"
-		       label="Date Range"
-		       description="Defines the range of dates to show">
-			<option value="by_day">Day</option>
-			<option value="by_month">Month</option>
-			<option value="by_year">Year</option>
-		</param>
+    <config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="use_css"
+					type="radio"
+					default="1"
+					label="Use default CSS"
+					description="Allow use the default CSS of the module">
+            		<option value="0">No</option>
+            		<option value="1">Yes</option>
+        		</field>
 
-	<param name="order_by" type="list" default="mdy"
-		       label="Order"
-		       description="Defines the order for the events">
-			<option value="mdy">Month-Day-Year</option>
-			<option value="dmy">Day-Month-Year</option>
-			<option value="ymd">Year-Month-Day</option>
-			<option value="ydm">Year-Day-Month</option>
-			<option value="dym">Day-Year-Month</option>
-			<option value="myd">Month-Year-Day</option>
-	</param>
+				<field
+					name="date_range"
+					type="list"
+					default="by_day"
+					label="Date Range"
+					description="Defines the range of dates to show">
+					<option value="by_day">Day</option>
+					<option value="by_month">Month</option>
+					<option value="by_year">Year</option>
+				</field>
+				<field
+					name="order_by"
+					type="list"
+					default="mdy"
+		       		label="Order"
+		       		description="Defines the order for the events">
+					<option value="mdy">Month-Day-Year</option>
+					<option value="dmy">Day-Month-Year</option>
+					<option value="ymd">Year-Month-Day</option>
+					<option value="ydm">Year-Day-Month</option>
+					<option value="dym">Day-Year-Month</option>
+					<option value="myd">Month-Year-Day</option>
+				</field>
 
-		<param name="use_random" type="radio" default="1" label="Random" description="Shows the events in no particular order">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-	<param name="formatted_date" type="radio" default="1" label="Formatted Date" description="Shows the date with format, be careful, a very ancient date don't be formatted">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-       	<param name="text_show" type="radio" default="2" label="Text to Show" description="Text to show on the module">
-            <option value="0">Title</option>
-            <option value="1">Description</option>
-            <option value="2">Both</option>
-        </param>
+				<field
+					name="use_random"
+					type="radio"
+					default="1"
+					label="Random"
+					description="Shows the events in no particular order">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
 
-     <param name="count" type="text" default="1" size="2" label="Number of events to show" description="Number of events to show (default 1)" />  
+				<field
+					name="formatted_date"
+					type="radio"
+					default="1"
+					label="Formatted Date"
+					description="Shows the date with format, be careful, a very ancient date don't be formatted">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
 
-     <param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable). this
- allows individual module styling." />         
+				<field
+					name="text_show"
+					type="radio"
+					default="2"
+					label="Text to Show" description="Text to show on the module">
+					<option value="0">Title</option>
+					<option value="1">Description</option>
+					<option value="2">Both</option>
+				</field>
 
-	<param type="spacer" default="Global Link" />
+				<field
+					name="count"
+					type="text"
+					default="1"
+					size="2"
+					label="Number of events to show" description="Number of events to show (default 1)">
+				</field>
 
-	<param name="islink" type="radio" default="0" label="Show link to the component" description="Show link to the component">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-        <param name="text_link" type="text" default="1" size="25" label="Text" description="Text for the global link" />  
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable). this
+ allows individual module styling.">
+				</field>
 
-	<param type="spacer" default="Individual Links" />
+				<field
+					name="mayspacer2"
+					type="spacer"
+					default="Global Link"
+					hr="true">
+				</field>
 
-	<param name="ilinks" type="radio" default="0" label="Show individual link" description="Show a link for every element on the list to go for a individual description">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
-        <param name="text_ilinks" type="text" default="1" size="25" label="Text for links" description="Text for individual links" /> 
-	
-    </params>
-</install>
+				<field
+					name="islink"
+					type="radio"
+					default="0"
+					label="Show link to the component"
+					description="Show link to the component">
+			        <option value="0">No</option>
+			        <option value="1">Yes</option>
+			    </field>
+        		<field
+        			name="text_link"
+        			type="text"
+        			default="1"
+        			size="25"
+        			label="Text"
+        			description="Text for the global link">
+				</field>
+
+				<field
+					name="myspacer"
+					type="spacer"
+					default="Individual Links"
+					hr="true">
+				</field>
+				<field
+					name="ilinks"
+					type="radio"
+					default="0"
+					label="Show individual link"
+					description="Show a link for every element on the list to go for a individual description">
+            		<option value="0">No</option>
+            		<option value="1">Yes</option>
+        		</field>
+        		<field
+        			name="text_ilinks"
+        			type="text"
+        			default="1"
+        			size="25"
+        			label="Text for links"
+        			description="Text for individual links">
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
 
