@@ -22,8 +22,8 @@ class EfemeridesViewEfemerides extends JView
 
 	function display($tpl = null)
 	{
-		$params = &JComponentHelper::getParams( 'com_efemerides' );
-    $items = $this->get('Items');
+		$params =& JComponentHelper::getParams( 'com_efemerides' );
+    $items = $this->get('Data');
     $pagination = $this->get('Pagination');
     // Check for errors.
     if (count($errors = $this->get('Errors'))) 
@@ -31,9 +31,6 @@ class EfemeridesViewEfemerides extends JView
       JError::raiseError(500, implode('<br />', $errors));
       return false;
     }
-    foreach($this->items as $i => $item): 
-      echo $item->id;
-    endforeach;
     $title = $params->get('optional_title');
     $useCss = $params->get('use_css');
     $document =& JFactory::getDocument();

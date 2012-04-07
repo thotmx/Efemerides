@@ -11,7 +11,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-jimport( 'joomla.application.component.modellist' );
+jimport( 'joomla.application.component.model' );
 
 /**
  * Efemerides Model
@@ -19,17 +19,21 @@ jimport( 'joomla.application.component.modellist' );
  * @package    Efemerides
  * @subpackage Components
  */
-class EfemeridesModelEfemerides extends JModelList
+class EfemeridesModelEfemerides extends JModel
 {
+ protected $total = null;
+  protected $pagination = null;
+  protected $data;
 
-  protected function getListQuery()
+
+ /* protected function getListQuery()
   {
     $db = JFactory::getDBO();
     $query = $db->getQuery(true);
     $query_string = $this->_buildQuery();
     $query->setQuery($query_string);
     return $query;
-  }
+  }*/
 
   function _buildQuery()
   {
@@ -58,11 +62,7 @@ class EfemeridesModelEfemerides extends JModelList
   /**
    * Gets the greeting
    * @return string The greeting to be displayed to the user
-  protected $total = null;
-  protected $pagination = null;
-  protected $data;
-
-  function __construct()
+   function __construct()
   {
     parent::__construct();
 
@@ -79,9 +79,12 @@ class EfemeridesModelEfemerides extends JModelList
     //$this->setState('limit', $limit);
     //$this->setState('limitstart', $limitstart);
   }
-
-  public function getData($date_range) 
+*/
+  public function getData() 
   {
+    $params = &JComponentHelper::getParams('com_efemerides');
+    $date_range = $params->get('date_range');
+
     // if data hasn't already been obtained, load it
     if (empty($this->data)) {
       $query = $this->_buildQuery($date_range);
@@ -92,8 +95,10 @@ class EfemeridesModelEfemerides extends JModelList
   }
 
 
-  public function getTotal($date_range)
+  public function getTotal()
   {
+    $params = &JComponentHelper::getParams('com_efemerides');
+    $date_range = $params->get('date_range');
     // Load the content if it doesn't already exist
     if (empty($this->_total)) {
       $query = $this->_buildQuery($date_range);
@@ -116,17 +121,20 @@ class EfemeridesModelEfemerides extends JModelList
     return $newlist;
   }
 
-  function getPagination($date_range)
+  function getPagination()
   {
+
+    $params = &JComponentHelper::getParams('com_efemerides');
+    $date_range = $params->get('date_range');
     // Load the content if it doesn't already exist
     if (empty($this->pagination)) {
-      jimport('joomla.html.pagination');
-      $this->pagination = new JPagination($this->getTotal($date_range), $this->getState('limitstart'), $this->getState('limit') );
+      jimport('joomla.//html.pagination');
+      $this->pagination = new JPagination($this->getTotal(), $this->getState('limitstart'), $this->getState('limit'));
     }
     return $this->pagination;
   }
 
-
+/*
  function _buildQuery($date_range)
   {
     $published = ' published=1';
