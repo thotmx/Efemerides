@@ -11,7 +11,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-jimport( 'joomla.application.component.model' );
+jimport( 'joomla.application.component.modelitem' );
 
 /**
  * AdminEfemerides Model
@@ -19,7 +19,7 @@ jimport( 'joomla.application.component.model' );
  * @package    Efemerides
  * @subpackage Components
  */
-class AdminEfemeridesModelAdminEfemerides extends JModel
+class AdminEfemeridesModelAdminEfemerides extends JModelItem
 {
     /**
      * AdminEfemerides data array

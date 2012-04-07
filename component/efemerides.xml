@@ -1,122 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
-<install type="component" version="1.5.0">
- <name>Efemerides</name>
- <!-- The following elements are optional and free of formatting conttraints -->
- <creationDate>2009 10 26</creationDate>
- <author>Hermes Ojeda Ruiz</author>
- <authorEmail>hermes.o.r@gmail.com</authorEmail>
- <authorUrl>http://revolucionemosoaxaca.org</authorUrl>
- <copyright>Copyright 2008</copyright>
- <license>GNU/GPL</license>
- <!--  The version string is recorded in the components table -->
- <version>0.8.5</version>
- <!-- The description is optional and defaults to the name -->
- <description>Easy component to manage important historical events</description>
+<extension type="component" version="2.5.0">
+	<name>Efemerides</name>
+<!-- The following elements are optional and free of formatting conttraints -->
+<creationDate>2009 10 26</creationDate>
+<author>Hermes Ojeda Ruiz</author>
+<authorEmail>hermes.o.r@gmail.com</authorEmail>
+<authorUrl>http://revolucionemosoaxaca.org</authorUrl>
+<copyright>Copyright 2008</copyright>
+<license>GNU/GPL</license>
+<!--  The version string is recorded in the components table -->
+<version>0.9</version>
+<!-- The description is optional and defaults to the name -->
+<description>Easy component to manage important historical events</description>
 
- <!-- Site Main File Copy Section -->
- <!-- Note the folder attribute: This attribute describes the folder
-      to copy FROM in the package to install therefore files copied
-      in this section are copied from /site/ in the package -->
- <files folder="com_efemerides/component">
-  <filename>index.html</filename>
-  <filename>efemerides.php</filename>
-  <filename>controller.php</filename>
-  <folder>views</folder>
-  <folder>models</folder>
-  <folder>css</folder>
-  <!--<filename>views/index.html</filename>
-  <filename>views/efemerides/index.html</filename>
-  <filename>views/efemerides/view.html.php</filename>
-  <filename>views/efemerides/tmpl/index.html</filename>
-  <filename>views/efemerides/tmpl/default.php</filename>
-  <filename>views/efemerides/tmpl/default.xml</filename>
-  <filename>models/index.html</filename>
-  <filename>models/efemerides.php</filename>-->
- </files>
- 
- <install>
-      <sql>
-         <file charset="utf8" driver="mysql">install.utf.sql</file>
-      </sql>
-   </install>
-   <uninstall>
-      <sql>
-         <file charset="utf8" driver="mysql">uninstall.utf.sql</file>
-      </sql>
-   </uninstall>   
+<!-- Site Main File Copy Section -->
+<!-- Note the folder attribute: This attribute describes the folder
+to copy FROM in the package to install therefore files copied
+in this section are copied from /site/ in the package -->
+<files folder="com_efemerides/site">
+	<filename>index.html</filename>
+	<filename>efemerides.php</filename>
+	<filename>controller.php</filename>
+	<folder>views</folder>
+	<folder>models</folder>
+	<folder>css</folder>
+</files>
 
- <languages folder="com_efemerides/language/site">
-    <language tag="en-GB">en-GB.com_efemerides.ini</language>
-    <language tag="es-ES">es-ES.com_efemerides.ini</language>
- </languages>
-
-
- 
- <administration>
-  <!-- Administration Menu Section -->
-  <menu>Efemerides</menu>
-  
-  <!-- Administration Main File Copy Section -->
-  <files folder="com_efemerides/administrator">
-   <filename>index.html</filename>
-   <filename>admin.efemerides.php</filename>
-   <filename>config.xml</filename>
-   <filename>controller.php</filename>
-   <folder>models</folder>
-   <folder>views</folder>
-   <folder>controllers</folder>
-   <folder>tables</folder>
-   <folder>images</folder>
-   <folder>css</folder>
-   <!--<filename>models/adminefemerides.php</filename>
-   <filename>models/efemerides.php</filename>
-   <filename>models/index.html</filename>
-   <filename>views/adminefemerides/view.html.php</filename>
-   <filename>views/adminefemerides/index.html</filename>
-   <filename>views/adminefemerides/tmpl/default.php</filename>
-   <filename>views/adminefemerides/tmpl/index.html</filename>
-   
-   <filename>controllers/efemerides.php</filename>
-   <filename>controllers/index.html</filename>
-   <filename>views/efemerides/tmpl/form.php</filename>
-   <filename>views/efemerides/tmpl/index.html</filename>
-   <filename>views/efemerides/view.html.php</filename>
-   <filename>views/efemerides/index.html</filename>
-   <filename>views/index.html</filename>
-      
-   <filename>tables/efemerides.php</filename>
-   <filename>tables/index.html</filename>-->
-
-   
-   <filename>install.utf.sql</filename>
-   <filename>uninstall.utf.sql</filename>
-  </files>  
-  <languages folder="com_efemerides/language/admin">
-    <language tag="en-GB">en-GB.com_efemerides.menu.ini</language>
-    <language tag="es-ES">es-ES.com_efemerides.menu.ini</language>                          
-    <language tag="en-GB">en-GB.com_efemerides.ini</language>
-    <language tag="es-ES">es-ES.com_efemerides.ini</language>    
-  </languages>
-
- </administration>
-    <params>
-    <param name="use_css" type="radio" default="1" label="Use default CSS" description="Allow use the default CSS of the module">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-    </param>	
-	<param name="optional_title" default="Efemerides Today" type="text" label="Title" description="The title to show on the component." />
-    <param name="date_range" type="list" label="Date range"
-		       description="Defines the range of dates to show">
-        
-			<option value="by_day">Day</option>
-			<option value="by_month">Month</option>
-			<option value="by_year">Year</option>
-	</param>	
-	<param name="formatted_date" type="radio" default="1" label="Formatted Date" description="Shows the date with format, be careful, a very ancient date don't be formatted">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
-        </param>
- </params>
- 
+<install>
+	<sql>
+		<file charset="utf8" driver="mysql">install.utf.sql</file>
+	</sql>
 </install>
+<uninstall>
+	<sql>
+		<file charset="utf8" driver="mysql">uninstall.utf.sql</file>
+	</sql>
+</uninstall>   
+
+<languages folder="com_efemerides/language/site">
+	<language tag="en-GB">en-GB.com_efemerides.ini</language>
+	<language tag="es-ES">es-ES.com_efemerides.ini</language>
+</languages>
+
+
+
+<administration>
+<!-- Administration Menu Section -->
+<menu>Efemerides</menu>
+
+<!-- Administration Main File Copy Section -->
+<files folder="com_efemerides/administrator">
+	<filename>index.html</filename>
+	<filename>admin.efemerides.php</filename>
+	<filename>config.xml</filename>
+	<filename>controller.php</filename>
+	<folder>models</folder>
+	<folder>views</folder>
+	<folder>controllers</folder>
+	<folder>tables</folder>
+	<folder>images</folder>
+	<folder>css</folder>
+
+<filename>install.utf.sql</filename>
+<filename>uninstall.utf.sql</filename>
+</files>  
+<languages folder="com_efemerides/language/admin">
+	<language tag="en-GB">en-GB.com_efemerides.menu.ini</language>
+	<language tag="es-ES">es-ES.com_efemerides.menu.ini</language>                          
+	<language tag="en-GB">en-GB.com_efemerides.ini</language>
+	<language tag="es-ES">es-ES.com_efemerides.ini</language>    
+	</languages>
+
+	</administration>
+	<config>
+	<fields name="params">
+	<fieldset name="basic">
+
+	<field name="use_css" type="radio" default="1" label="Use default CSS" description="Allow use the default CSS of the module">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+	</field>	
+	<field name="optional_title" default="Efemerides Today" type="text" label="Title" description="The title to show on the component." />
+	<field name="date_range" type="list" label="Date range"
+	description="Defines the range of dates to show">
+
+	<option value="by_day">Day</option>
+	<option value="by_month">Month</option>
+	<option value="by_year">Year</option>
+	</field>	
+	<field name="formatted_date" type="radio" default="1" label="Formatted Date" description="Shows the date with format, be careful, a very ancient date don't be formatted">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+	</field>
+	</fieldset>
+	</fields>
+	</config>
+
+	</extension>

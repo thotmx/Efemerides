@@ -11,7 +11,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-jimport( 'joomla.application.component.model' );
+jimport( 'joomla.application.component.modelitem' );
 
 /**
  * Efemerides Model
@@ -19,15 +19,16 @@ jimport( 'joomla.application.component.model' );
  * @package    Efemerides
  * @subpackage Components
  */
-class EfemeridesModelEfemerides extends JModel
+echo "Cargando Modelo<br />";
+class EfemeridesModelEfemerides extends JModelItem
 {
     /**
     * Gets the greeting
     * @return string The greeting to be displayed to the user
     */
-   var $_total = null;
-   var $_pagination = null;
-    var $_data;
+   protected $total = null;
+   protected $pagination = null;
+   protected $data;
 
    function __construct()
   {
@@ -36,36 +37,37 @@ class EfemeridesModelEfemerides extends JModel
         global $mainframe, $option;
  
         // Get pagination request variables
-        $limit = $mainframe->getUserStateFromRequest('global.list.limit', 'limit', $mainframe->getCfg('list_limit'), 'int');
-        $limitstart = JRequest::getVar('limitstart', 0, '', 'int');
+        //$limit = $mainframe->getUserStateFromRequest('global.list.limit', 'limit', $mainframe->getCfg('list_limit'), 'int');
+	//$limit = JRequest::getUInt('limit', $app->getCfg('list_limit',0));
+        //$limitstart = JRequest::getUInt('limitstart', 0);
  
         // In case limit has been changed, adjust it
-        $limitstart = ($limit != 0 ? (floor($limitstart / $limit) * $limit) : 0);
+        //$limitstart = ($limit != 0 ? (floor($limitstart / $limit) * $limit) : 0);
  
-        $this->setState('limit', $limit);
-        $this->setState('limitstart', $limitstart);
+        //$this->setState('limit', $limit);
+        //$this->setState('limitstart', $limitstart);
   }
 
-  function getData($date_range) 
+  public function getData($date_range) 
   {
         // if data hasn't already been obtained, load it
-        if (empty($this->_data)) {
+        if (empty($this->data)) {
             $query = $this->_buildQuery($date_range);
-            $this->_data = $this->_getList($query, $this->getState('limitstart'), $this->getState('limit')); 
-	    $this->_data = $this->putFormattedDate($this->_data);
+            $this->data = $this->_getList($query, $this->getState('limitstart'), $this->getState('limit')); 
+	    $this->data = $this->putFormattedDate($this->data);
         }
-        return $this->_data;
+        return $this->data;
   }
 
 
-  function getTotal($date_range)
+  public function getTotal($date_range)
   {
         // Load the content if it doesn't already exist
         if (empty($this->_total)) {
             $query = $this->_buildQuery($date_range);
-            $this->_total = $this->_getListCount($query);    
+            $this->total = $this->_getListCount($query);    
         }
-        return $this->_total;
+        return $this->total;
   }
 	
 	function putFormattedDate($list)
@@ -85,11 +87,11 @@ class EfemeridesModelEfemerides extends JModel
 	function getPagination($date_range)
 	  {
         // Load the content if it doesn't already exist
-        if (empty($this->_pagination)) {
+        if (empty($this->pagination)) {
             jimport('joomla.html.pagination');
-            $this->_pagination = new JPagination($this->getTotal($date_range), $this->getState('limitstart'), $this->getState('limit') );
+            $this->pagination = new JPagination($this->getTotal($date_range), $this->getState('limitstart'), $this->getState('limit') );
         }
-        return $this->_pagination;
+        return $this->pagination;
 	  }
 
 
@@ -113,6 +115,7 @@ class EfemeridesModelEfemerides extends JModel
 				break;
 	    }
 	    return $query;		
-    }
+    } 
 }
+echo "Fin de carga de Modelo<br />";
 ?>

@@ -11,6 +11,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
+jimport('joomla.database.table');
 
 /**
  * Efemerides Table class
@@ -18,7 +19,7 @@ defined('_JEXEC') or die('Restricted access');
  * @package    Joomla.Tutorials
  * @subpackage Components
  */
-class TableEfemerides extends JTable
+class EfemeridesTableEfemerides extends JTable
 {
 	/**
 	 * Primary Key
