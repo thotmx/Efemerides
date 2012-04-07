@@ -19,7 +19,7 @@ jimport('joomla.database.table');
  * @package    Joomla.Tutorials
  * @subpackage Components
  */
-class EfemeridesTableEfemerides extends JTable
+class TableEfemerides extends JTable
 {
 	/**
 	 * Primary Key

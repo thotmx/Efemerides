@@ -31,7 +31,9 @@ class EfemeridesViewEfemerides extends JView
       JError::raiseError(500, implode('<br />', $errors));
       return false;
     }
-
+    foreach($this->items as $i => $item): 
+      echo $item->id;
+    endforeach;
     $title = $params->get('optional_title');
     $useCss = $params->get('use_css');
     $document =& JFactory::getDocument();
@@ -47,11 +49,6 @@ class EfemeridesViewEfemerides extends JView
         $document->addStyleSheet($path);
       } 
     } 
-    /*	if (strcmp($title,"") == 0){
-        $tile = 'Efemerides Today';
-        }*/
-    //$items =& $this->get('Data');      
-    /*  $pagination =& $model->getPagination($params->get('date_range'));
 
     // push data into the template*/
     $this->assignRef('items', $items);     

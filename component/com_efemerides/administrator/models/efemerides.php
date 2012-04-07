@@ -16,7 +16,7 @@ jimport( 'joomla.application.component.model' );
 /**
  * Efemerides Model
  *
- * @package    Joomla.Tutorials
+ * @package    Joomla.Efemerides
  * @subpackage Components
  */
 class AdminEfemeridesModelEfemerides extends JModel
@@ -105,6 +105,9 @@ class AdminEfemeridesModelEfemerides extends JModel
 			$this->_data = new stdClass();
 			$this->_data->id = 0;
 			$this->_data->historicdate = '0000-00-00';
+      $this->_data->title= '';
+      $this->_data->published=False;
+      $this->_data->alias= '';
 			$this->_data->description = '';
 		}
 		return $this->_data;

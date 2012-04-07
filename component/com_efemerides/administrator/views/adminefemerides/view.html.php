@@ -27,7 +27,7 @@ class AdminEfemeridesViewAdminEfemerides extends JView
 	 **/
 	function display($tpl = null)
 	{
-		global $mainframe;
+		#global $mainframe;
 		
 		JToolBarHelper::title(   JText::_( 'Efemerides Manager' ), 'generic.png' );
 		JToolBarHelper::addNewX();
@@ -41,18 +41,18 @@ class AdminEfemeridesViewAdminEfemerides extends JView
 		JToolBarHelper::custom( 'backupcontroller', 'efemeridesbackups','efemeridesbackups','Restore backups',false,false);
 		JToolBarHelper::custom( 'backup', 'export', 'export', 'Make Backup', false, false );
 		JToolBarHelper::divider();
-		JToolBarHelper::preferences('com_efemerides','200');
+		JToolBarHelper::preferences('com_efemerides');
 
 		// get request vars for filter state and search
-		$filter_state		= $mainframe->getUserStateFromRequest( $this->_context.'.filter_state',	'filter_state',	'',	'word' );
-		$filter_datesort	= $mainframe->getUserStateFromRequest( $this->_context.'.filter_datesort', 'filter_datesort', '', 'word' );
-		$search				= $mainframe->getUserStateFromRequest($option.$name.'.search', 'search', '', 'string');
-		$search				= JString::strtolower($search);
+	#	$filter_state		= $mainframe->getUserStateFromRequest( $this->_context.'.filter_state',	'filter_state',	'',	'word' );
+	#	$filter_datesort	= $mainframe->getUserStateFromRequest( $this->_context.'.filter_datesort', 'filter_datesort', '', 'word' );
+		#$search				= $mainframe->getUserStateFromRequest($option.$name.'.search', 'search', '', 'string');
+		#$search				= JString::strtolower($search);
 	
 		// search filter
-		$lists['search']	= $search;
+		#$lists['search']	= $search;
 		// state filter
-		$lists['state']		= JHTML::_('grid.state', $filter_state );
+		#$lists['state']		= JHTML::_('grid.state', $filter_state );
 
 		// state date order
 		$datesort[] = JHTML::_('select.option',  '', '- ' .JText::_( 'Date sort (Default YYYY-MM-DD)' ). ' -' );
@@ -60,13 +60,14 @@ class AdminEfemeridesViewAdminEfemerides extends JView
 		$datesort[] = JHTML::_('select.option',  'DYM', JText::_( 'Sort:') . ' ' .JText::_( 'DAY' ).   ' - ' . JText::_( 'YEAR' ).  ' - ' .JText::_ ( 'MONTH' ) );
 		$datesort[] = JHTML::_('select.option',  'MYD', JText::_( 'Sort:') . ' ' .JText::_( 'MONTH' ). ' - ' . JText::_( 'YEAR' ).  ' - ' .JText::_( 'DAY' )    );
 		$datesort[] = JHTML::_('select.option',  'MDY', JText::_( 'Sort:') . ' ' .JText::_( 'MONTH' ). ' - ' . JText::_( 'DAY' ).   ' - ' .JText::_( 'YEAR' )   );
-		$lists['datesort']	= JHTML::_('select.genericlist',   $datesort, 'filter_datesort', 'class="inputbox" size="1" onchange="submitform();" title="'.JText::_('Only active if sort on HISTORICDATE').'"', 'value', 'text', $filter_datesort );
+	#	$lists['datesort']	= JHTML::_('select.genericlist',   $datesort, 'filter_datesort', 'class="inputbox" size="1" onchange="submitform();" title="'.JText::_('Only active if sort on HISTORICDATE').'"', 'value', 'text', $filter_datesort );
 
 		// Get data from the model
-		$items				=& $this->get('Data');
-		$state 				=& $this->get('state');
-		$lists['order_Dir'] = JRequest::getVar('filter_order_Dir');
-		$lists['order'] 	= JRequest::getVar('filter_order');
+		$items				=& $this->get('Items');
+#		$state 				=& $this->get('state');
+
+		#$lists['order_Dir'] = JRequest::getVar('filter_order_Dir');
+		#$lists['order'] 	= JRequest::getVar('filter_order');
 		//print_r($lists);
 		$pagination 		=& $this->get('Pagination');
 

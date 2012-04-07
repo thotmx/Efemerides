@@ -25,8 +25,12 @@ if($controller = JRequest::getWord('controller')) {
 	}
 }
 
-$mainframe->addCustomHeadTag ('<link rel="stylesheet" href="'.$this->baseurl.'components/com_efemerides/css/icon.css" type="text/css" media="screen" />');
-$mainframe->addCustomHeadTag ('<link rel="stylesheet" href="'.$this->baseurl.'components/com_efemerides/css/style.css" type="text/css" media="screen" />');
+$doc =& JFactory::getDocument();
+$href = JURI::base(true).'/components/com_efemerides/css/icon.css';
+$attribs = array('type' => 'text/css', 'media' => 'screen'); 
+$doc->addHeadLink($href,'stylesheet','rel',$attribs);
+$href = JURI::base(true).'/components/com_efemerides/css/style.css';
+$doc->addHeadLink($href,'stylesheet','rel',$attribs);
 
 // Create the controller
 $classname    = 'AdminEfemeridesController'.$controller;

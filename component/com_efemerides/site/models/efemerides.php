@@ -11,7 +11,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-jimport( 'joomla.application.component.modelitem' );
+jimport( 'joomla.application.component.modellist' );
 
 /**
  * Efemerides Model
@@ -19,7 +19,7 @@ jimport( 'joomla.application.component.modelitem' );
  * @package    Efemerides
  * @subpackage Components
  */
-class EfemeridesModelEfemerides extends JModelItem
+class EfemeridesModelEfemerides extends JModelList
 {
 
   protected function getListQuery()

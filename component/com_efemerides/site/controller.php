@@ -20,14 +20,4 @@ jimport('joomla.application.component.controller');
  */
 class EfemeridesController extends JController
 {
-    /**
-     * Method to display the view
-     *
-     * @access    public
-     */
-    /*function display()
-    {
-        parent::display();
-    }*/
-
 }

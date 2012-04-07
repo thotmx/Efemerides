@@ -1,7 +1,6 @@
 <?php defined('_JEXEC') or die('Restricted access'); ?>
 
 <script language="javascript" type="text/javascript">
-<!--
 function submitbutton(pressbutton) {
         var form = document.adminForm;
         if (pressbutton == 'cancel') {
@@ -15,7 +14,6 @@ function submitbutton(pressbutton) {
         ?>
         submitform(pressbutton);
 }
-//-->
 </script>
 
 
