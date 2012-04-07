@@ -29,10 +29,8 @@ jimport ('joomla.application.component.controller');
 //$controller   = new $classname( );
 $controller = JController::getInstance('Efemerides');
 // Perform the Request task
-echo get_class($controller);
-echo "Cargado el controlador<br />";
+
 $controller->execute(JRequest::getCmd('task'));
-echo "Paso el request<br />";
 // Redirect if set by the controller
 $controller->redirect();
-echo "Paso la redireccion<br />";
+?>

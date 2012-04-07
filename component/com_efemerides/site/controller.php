@@ -18,7 +18,6 @@ jimport('joomla.application.component.controller');
  * @package    Efemerides
  * @subpackage Components
  */
-echo "Cargando EfemeridesController<br/>";
 class EfemeridesController extends JController
 {
     /**
@@ -32,4 +31,3 @@ class EfemeridesController extends JController
     }*/
 
 }
-echo "Termino de cargar EfemeridesController<br/>";
