@@ -1,6 +1,5 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access'); ?>
-<form id="adminForm" action="<?php echo JRoute::_('index.php');?>" method="post" name="adminForm">
 <h1 class="componentheading"><?php echo JText::_($this->title); ?></h1>
 <div class="comefemerides-main">
 <?php
@@ -71,6 +70,5 @@ defined('_JEXEC') or die('Restricted access'); ?>
 
 </div>
 </div>
-</form>
 
 

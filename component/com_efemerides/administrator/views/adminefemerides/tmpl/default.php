@@ -3,11 +3,6 @@
 
 <table>
 <tr>
-	<td align="left" width="100%" colspan="2">
-		<?php echo JText::_('Backup File Name:');?><input type="text" name="backupname" id="backupname" value="" /><br/>&nbsp;
-	</td>
-</tr>
-<tr>
 	<td align="left" width="100%">
 		<?php echo JText::_( 'Filter' ); ?>:
 		<input type="text" name="search" id="search" value="<?php echo $this->lists['search'];?>" class="text_area" onchange="document.adminForm.submit();" />

@@ -63,18 +63,20 @@ class AdminEfemeridesViewAdminEfemerides extends JView
 	#	$lists['datesort']	= JHTML::_('select.genericlist',   $datesort, 'filter_datesort', 'class="inputbox" size="1" onchange="submitform();" title="'.JText::_('Only active if sort on HISTORICDATE').'"', 'value', 'text', $filter_datesort );
 
 		// Get data from the model
-		$items				=& $this->get('Items');
+		$items				= $this->get('Items');
 #		$state 				=& $this->get('state');
 
 		#$lists['order_Dir'] = JRequest::getVar('filter_order_Dir');
 		#$lists['order'] 	= JRequest::getVar('filter_order');
 		//print_r($lists);
-		$pagination 		=& $this->get('Pagination');
+		$pagination 		= $this->get('Pagination');
+    $state = $this->get('State');
 
 		//Assign Vars to Template
 		$this->assignRef('lists',		$lists);
 		$this->assignRef('items',		$items);
 		$this->assignRef('pagination',	$pagination);
+		$this->assignRef('state',	$state);
 
 		parent::display($tpl);
 	}
