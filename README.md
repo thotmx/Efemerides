@@ -10,11 +10,13 @@ How to use this repository
 Download the repository with git
 
 `git clone git://github.com/hermes-logicalbricks/Efemerides.git`
+
 `cd Efemerides`
 
 Change to the branch that you want, (for Joomla 1.5, Joomla 1.6 or Joomla 2.5)
 
 `git checkout joomla15`
+
 `git checkout joomla16`
 
 Now, enter to the folder that contain the extension that you want:
