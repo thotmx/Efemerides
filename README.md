@@ -1,3 +1,12 @@
+UNMAINTAINED
+================================
+
+This repository is not longer maintained, now the official repositories for Joomla Efemérides Extensions are:
+
+* [Component](https://github.com/hermes-logicalbricks/com_efemerides)
+* [Module](https://github.com/hermes-logicalbricks/mod_efemerides)
+
+
 Efemerides
 ================================
 
@@ -33,4 +42,4 @@ There are three branches:
 
 * joomla15 : Only Joomla! 1.5 compatible.
 * joomla16 : Only Joomla! 1.6 compatible.
-* master : For Joomla! 2.5 development.
+* master: For Joomla! 2.5 development.
